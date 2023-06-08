@@ -5,6 +5,7 @@ var solutionElement = document.getElementById('choices');
 var timerElement = document.getElementById('time');
 var gameOverElement = document.getElementById('end-screen');
 var finalScoreElement = document.getElementById('final-score');
+var highScoresElement = document.getElementById('high-scores-list');
 
 var currentQuestionIndex = 0;
 var time = 0;
@@ -90,7 +91,7 @@ function endQuiz() {
 
 startButton.addEventListener('click', startQuiz);
 
-initialsForm.addEventListener('submit', function (event) {
+document.getElementById('intials-form').addEventListener('submit', function (event) {
   event.preventDefault();
   var initials = initialsInput.value.trim();
   if (initials !== "") {
@@ -107,4 +108,19 @@ function saveScore(initials, time) {
   };
   highScores.push(newScore);
   localStorage.setItem('highScores', JSON.stringify(highScores));
+
+  initialsInput.value = '';
+
+  updateHighScoresList(highScores);
+}
+
+function updateHighScoresList(highScores) {
+  var highScoresList = document.getElementById('high-scores-list');
+  highScoresList.innerHTML = '';
+
+  highScores.forEach(function (score) {
+    var listItem = document.createElement('li');
+    listItem.textContent = score.initials;
+    highScoresList.appendChild(listItem);
+  });
 }
