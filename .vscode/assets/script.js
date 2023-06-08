@@ -1,10 +1,10 @@
-var startButton = document.getElementById('startbutton');
-var questionContainer = document.getElementById('gamescreen');
+var startButton = document.getElementById('start-button');
+var questionContainer = document.getElementById('game-screen');
 var questionElement = document.getElementById('question');
 var solutionElement = document.getElementById('choices');
 var timerElement = document.getElementById('time');
-var gameOverElement = document.getElementById('endscreen');
-var finalScoreElement = document.getElementById('finalscore');
+var gameOverElement = document.getElementById('end-screen');
+var finalScoreElement = document.getElementById('final-score');
 
 var currentQuestionIndex = 0;
 var time = 0;
@@ -86,7 +86,6 @@ function endQuiz() {
   questionContainer.classList.add('hidden');
   gameOverElement.classList.remove('hidden');
   finalScoreElement.textContent = time;
-  showFinalScore.textContent = "score:" + answers.correctAnswer;
 }
 
 startButton.addEventListener('click', startQuiz);
@@ -101,7 +100,6 @@ initialsForm.addEventListener('submit', function (event) {
 });
 
 function saveScore(initials, time) {
-  preventDefault();
   var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
   var newScore = {
     initials: initials,
