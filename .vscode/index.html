@@ -11,23 +11,24 @@
         <h1>Javascript Quiz Game</h1>
     </header>
     <main>
-        <section id = "startscreen">
+        <section id = "start-screen">
             <h2>Welcome to the Coding Quiz Game!!!</h2>
-            <button id = "startbutton">Start</button>
+            <button id = "start-button">Start</button>
         </section>
 
-    <section id="gamescreen" class="hidden">
+    <section id="game-screen" class="hidden">
         <h2>Question:</h2>
         <p id="question"></p>
         <div id="choices"></div>
         <p id="timer"><span id="time">0</span> seconds</p>
     </section>
-    <section id="endscreen" class="hidden">
+    <section id="end-screen" class="hidden">
         <h2>Your Score: <span id="final-score"></span></h2>
-        <form id="intialsform">
+        <form id="intials-form">
             <label for="intials">Enter your intials here</label>
             <input type="text" id="intials" maxlength="3" required>
             <button type="submit">Save</button>
+            <ul id="high-scores-list"></ul>
         </form>
     </section>
     </main>
