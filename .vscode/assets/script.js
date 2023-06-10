@@ -14,22 +14,39 @@ var timerId;
 var questions = [
   {
     question: "What are strings?",
-    solution: ["Text", "Storing Text", "A Piece of Fabric", "None of the above", "Used for storing and manipulating text"],
+    solution: [
+      "Text", 
+      "Used for storing and manipulating text", 
+      "A Piece of Fabric", 
+      "None of the above",],
     answer: "Used for storing and manipulating text"
   },
   {
     question: "What is a function?",
-    solution: ["Function", "A Function", "A Method", "None of the above", "Used for creating functions"],
+    solution: [
+      "Function", 
+      "Used for creating functions", 
+      "A Method", 
+      "None of the above",],
     answer: "Used for creating functions"
   },
   {
     question: "What is a class?",
-    solution: ["Class", "A Class", "A Constructor", "None of the above", "Used for creating classes"],
+    solution: [
+      "Class", 
+      "A Class", 
+      "A Constructor", 
+      "None of the above", 
+      "Used for creating classes"],
     answer: "Used for creating classes"
   },
   {
     question: "What is an object?",
-    solution: ["Object", "An Object", "A Property", "None of the above", "Used for creating objects"],
+    solution: [
+      "Used for creating objects",
+      "Phsycal Attribute", 
+      "A Property",
+      "None of the above", ],
     answer: "Used for creating objects"
   }
 ];
@@ -107,20 +124,28 @@ function saveScore(initials, time) {
     score: time
   };
   highScores.push(newScore);
+  highScores.sort(function (a, b) {
+    return b.score - a.score;
+  });
+  if (highScores.length > 10) {
+    highScores.pop();
+  }
   localStorage.setItem('highScores', JSON.stringify(highScores));
-
+  document.getElementById('final-score').textContent = time;
   initialsInput.value = '';
 
-  updateHighScoresList(highScores);
+ 
 }
+updateHighScoresList(highScores);
 
 function updateHighScoresList(highScores) {
-  var highScoresList = document.getElementById('high-scores-list');
   highScoresList.innerHTML = '';
 
   highScores.forEach(function (score) {
     var listItem = document.createElement('li');
-    listItem.textContent = score.initials;
+    listItem.textContent = score.initials + ' - '+ score.score;
     highScoresList.appendChild(listItem);
   });
 }
+
+startButton.addEventListener('click', startQuiz);

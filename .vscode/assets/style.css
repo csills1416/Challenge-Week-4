@@ -1,0 +1,74 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: darkgreen;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin-bottom: 20px;
+    border: black 1px solid;
+    padding: 10px;
+    background-color: white;
+    border-radius: initial;
+    flex-wrap: wrap;
+}
+
+.hidden {
+    display: none;
+}
+
+#start-screen {
+    text-align: center;
+    padding: 20px;
+}
+
+#start-button {
+    font-size: 24px;
+    padding: 10px 20px;
+    background-color: lightgreen;
+    color: black !important;
+    border: none;
+    cursor: pointer;  
+}
+
+#game-screen {
+    padding: 20px;
+}
+
+#question {
+    font-size: 40px;
+}
+
+#choices {
+    margin-top: 10px;
+}
+
+.solution {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 8px 12px;
+}
+
+#timer {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+#end-screen {
+    text-align: center;
+    padding: 20px;
+}
+
+#final-score {
+    font-weight: bold;
+}
