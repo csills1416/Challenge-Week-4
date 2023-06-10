@@ -14,6 +14,7 @@ var time = 0;
 var timerId;
 var highScores = [];
 
+//https://simplestepscode.com/javascript-quiz-tutorial///
 var questions = [
     {
       question: "What are strings?",
@@ -84,8 +85,12 @@ function handleSolution(event) {
 
   if (selectedSolution === currentQuestion.answer) {
     currentQuestionIndex++;
+  } else {
+    time -= 10;
+        if (time < 0) {
+          time = 0;
   }
-
+  }
   if (currentQuestionIndex >= questions.length || time <= 0) {
     endQuiz();
   } else {
@@ -149,7 +154,7 @@ initialsForm.addEventListener('submit', function (event) {
     initialsForm.reset();
     updateHighScoresList();
   });
-
+//https://michael-karen.medium.com/how-to-save-high-scores-in-local-storage-7860baca9d68//
   function loadHighScores() {
     var savedHighScores = JSON.parse(localStorage.getItem('highScores'));
     if (savedHighScores!== null) {
