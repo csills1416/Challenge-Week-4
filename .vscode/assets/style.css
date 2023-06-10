@@ -73,10 +73,7 @@ h2 {
     font-weight: bold;
 }
 
-.highscorelist {
-    display: flex;
-    flex-wrap: wrap;
-    color: white !important;
-    border: solid;
-    border-width: inherit;
+ul {
+    color: rgb(238, 255, 0) !important;
+    font-size: 20px;
 }
