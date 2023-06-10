@@ -72,3 +72,11 @@ h2 {
 #final-score {
     font-weight: bold;
 }
+
+.highscorelist {
+    display: flex;
+    flex-wrap: wrap;
+    color: white !important;
+    border: solid;
+    border-width: inherit;
+}
