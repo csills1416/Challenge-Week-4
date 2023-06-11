@@ -20,45 +20,45 @@ var questions = [
       question: "What are strings?",
       solution: [
         "Text", 
-        "Used for storing and manipulating text", 
+        "a sequence of characters", 
         "A Piece of Fabric", 
         "None of the above",],
-      answer: "Used for storing and manipulating text"
+      answer: "a sequence of characters"
     },
     {
       question: "What is a function?",
       solution: [
         "Function", 
-        "Used for creating functions", 
-        "A Method", 
+        "a reusable portion of a program, sometimes called a procedure or subroutine.", 
+        "A Method in which a function is called", 
         "None of the above",],
-      answer: "Used for creating functions"
+      answer: "a reusable portion of a program, sometimes called a procedure or subroutine."
     },
     {
       question: "What is a class?",
       solution: [
-        "Class", 
-        "A Class", 
+        "A section in school", 
+        "Having appropriate manners", 
         "A Constructor", 
         "None of the above", 
-        "Used for creating classes"],
-      answer: "Used for creating classes"
+        "a template used to create objects and to define object data types and methods"],
+      answer: "a template used to create objects and to define object data types and methods"
     },
     {
       question: "What is an object?",
       solution: [
-        "Used for creating objects",
+        "an instance of a Java class, meaning it is a copy of a specific class",
         "Phsycal Attribute", 
-        "A Property",
+        "something material that may be perceived by the senses",
         "None of the above", ],
-      answer: "Used for creating objects"
+      answer: "an instance of a Java class, meaning it is a copy of a specific class"
     }
   ];
 
 function startQuiz() {
   startButton.classList.add('hidden');
   questionContainer.classList.remove('hidden');
-  time = questions.length * 20;
+  time = questions.length * 30;
   timerElement.textContent = time;
   timerId = setInterval(timer, 1000);
   showQuestion();
